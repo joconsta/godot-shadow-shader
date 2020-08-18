@@ -14,9 +14,7 @@ __meta__ = {
 }
 
 [node name="Rect" parent="." instance=ExtResource( 1 )]
-margin_left = 100.0
 margin_top = 150.0
-margin_right = -624.0
 margin_bottom = -150.0
 
 [node name="RoundedRect" parent="." instance=ExtResource( 2 )]

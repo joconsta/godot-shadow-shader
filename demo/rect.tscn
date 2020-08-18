@@ -1,15 +1,25 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
+[ext_resource path="res://rect_shadow.shader" type="Shader" id=1]
 [ext_resource path="res://rect_shadow.gd" type="Script" id=3]
 
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.980392, 0.980392, 0.980392, 1 )
 
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 1 )
+shader_param/rect_position = Vector2( 0, 0 )
+shader_param/rect_end = Vector2( 300, 300 )
+shader_param/rect_corner_radius = 0
+shader_param/shadow_size = 20.0
+
 [node name="Rect" type="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_right = -724.0
-margin_bottom = -300.0
+margin_left = 100.0
+margin_top = 100.0
+margin_right = -624.0
+margin_bottom = -200.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -17,9 +27,10 @@ __meta__ = {
 
 [node name="Shadow" type="ColorRect" parent="."]
 show_behind_parent = true
+material = SubResource( 2 )
 margin_right = 300.0
 margin_bottom = 300.0
-color = Color( 0, 0, 0, 0.501961 )
+color = Color( 0, 0, 0, 0.74902 )
 script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
