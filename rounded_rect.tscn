@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://rect_shadow.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.980392, 0.980392, 0.980392, 1 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[node name="RoundedRect" type="Panel"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = -1620.0
+margin_bottom = -780.0
+rect_min_size = Vector2( 300, 300 )
+custom_styles/panel = SubResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Shadow" type="ColorRect" parent="."]
+show_behind_parent = true
+margin_right = 300.0
+margin_bottom = 300.0
+color = Color( 0, 0, 0, 0.501961 )
+script = ExtResource( 2 )
+corner_radius = 16
