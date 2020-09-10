@@ -1,24 +1,267 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://rect.tscn" type="PackedScene" id=1]
-[ext_resource path="res://rounded_rect.tscn" type="PackedScene" id=2]
-[ext_resource path="res://demo.gd" type="Script" id=3]
+[ext_resource path="res://rect_shadow.shader" type="Shader" id=1]
+[ext_resource path="res://rect_shadow.gd" type="Script" id=2]
+
+[sub_resource type="StyleBoxFlat" id=1]
+bg_color = Color( 0.980392, 0.980392, 0.980392, 1 )
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = ExtResource( 1 )
+shader_param/rect_position = Vector2( 0, 0 )
+shader_param/rect_end = Vector2( 226, 228 )
+shader_param/rect_corner_radius = 0
+shader_param/shadow_size = 2.0
+
+[sub_resource type="ShaderMaterial" id=3]
+shader = ExtResource( 1 )
+shader_param/rect_position = Vector2( 0, 0 )
+shader_param/rect_end = Vector2( 226, 228 )
+shader_param/rect_corner_radius = 0
+shader_param/shadow_size = 5.0
+
+[sub_resource type="ShaderMaterial" id=4]
+shader = ExtResource( 1 )
+shader_param/rect_position = Vector2( 0, 0 )
+shader_param/rect_end = Vector2( 226, 228 )
+shader_param/rect_corner_radius = 0
+shader_param/shadow_size = 8.0
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = ExtResource( 1 )
+shader_param/rect_position = Vector2( 0, 0 )
+shader_param/rect_end = Vector2( 226, 228 )
+shader_param/rect_corner_radius = 0
+shader_param/shadow_size = 12.0
+
+[sub_resource type="StyleBoxFlat" id=6]
+bg_color = Color( 0.980392, 0.980392, 0.980392, 1 )
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+
+[sub_resource type="ShaderMaterial" id=7]
+shader = ExtResource( 1 )
+shader_param/rect_position = Vector2( 0, 0 )
+shader_param/rect_end = Vector2( 226, 228 )
+shader_param/rect_corner_radius = 16
+shader_param/shadow_size = 2.0
+
+[sub_resource type="ShaderMaterial" id=8]
+shader = ExtResource( 1 )
+shader_param/rect_position = Vector2( 0, 0 )
+shader_param/rect_end = Vector2( 226, 228 )
+shader_param/rect_corner_radius = 16
+shader_param/shadow_size = 7.0
+
+[sub_resource type="ShaderMaterial" id=9]
+shader = ExtResource( 1 )
+shader_param/rect_position = Vector2( 0, 0 )
+shader_param/rect_end = Vector2( 226, 228 )
+shader_param/rect_corner_radius = 16
+shader_param/shadow_size = 10.0
+
+[sub_resource type="ShaderMaterial" id=10]
+shader = ExtResource( 1 )
+shader_param/rect_position = Vector2( 0, 0 )
+shader_param/rect_end = Vector2( 226, 228 )
+shader_param/rect_corner_radius = 16
+shader_param/shadow_size = 20.0
 
 [node name="Background" type="ColorRect"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 color = Color( 0.878431, 0.878431, 0.878431, 1 )
-script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Rect" parent="." instance=ExtResource( 1 )]
-margin_top = 150.0
-margin_bottom = -150.0
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 24
+custom_constants/margin_top = 48
+custom_constants/margin_left = 24
+custom_constants/margin_bottom = 48
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
-[node name="RoundedRect" parent="." instance=ExtResource( 2 )]
-margin_left = 600.0
-margin_top = 150.0
-margin_right = -124.0
-margin_bottom = -150.0
+[node name="GridContainer" type="GridContainer" parent="MarginContainer"]
+margin_left = 24.0
+margin_top = 48.0
+margin_right = 1000.0
+margin_bottom = 552.0
+custom_constants/vseparation = 48
+custom_constants/hseparation = 24
+columns = 4
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Rect1" type="PanelContainer" parent="MarginContainer/GridContainer"]
+margin_right = 226.0
+margin_bottom = 228.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="RectShadow1" type="ColorRect" parent="MarginContainer/GridContainer/Rect1"]
+show_behind_parent = true
+material = SubResource( 2 )
+margin_right = 226.0
+margin_bottom = 228.0
+color = Color( 0, 0, 0, 0.74902 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+shadow_size = 2
+
+[node name="Rect2" type="PanelContainer" parent="MarginContainer/GridContainer"]
+margin_left = 250.0
+margin_right = 476.0
+margin_bottom = 228.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="RectShadow2" type="ColorRect" parent="MarginContainer/GridContainer/Rect2"]
+show_behind_parent = true
+material = SubResource( 3 )
+margin_right = 226.0
+margin_bottom = 228.0
+color = Color( 0, 0, 0, 0.74902 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+shadow_size = 5
+
+[node name="Rect3" type="PanelContainer" parent="MarginContainer/GridContainer"]
+margin_left = 500.0
+margin_right = 726.0
+margin_bottom = 228.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="RectShadow3" type="ColorRect" parent="MarginContainer/GridContainer/Rect3"]
+show_behind_parent = true
+material = SubResource( 4 )
+margin_right = 226.0
+margin_bottom = 228.0
+color = Color( 0, 0, 0, 0.74902 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+shadow_size = 8
+
+[node name="Rect4" type="PanelContainer" parent="MarginContainer/GridContainer"]
+margin_left = 750.0
+margin_right = 976.0
+margin_bottom = 228.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 1 )
+
+[node name="RectShadow4" type="ColorRect" parent="MarginContainer/GridContainer/Rect4"]
+show_behind_parent = true
+material = SubResource( 5 )
+margin_right = 226.0
+margin_bottom = 228.0
+color = Color( 0, 0, 0, 0.74902 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+shadow_size = 12
+
+[node name="RoundedRect1" type="PanelContainer" parent="MarginContainer/GridContainer"]
+margin_top = 276.0
+margin_right = 226.0
+margin_bottom = 504.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 6 )
+
+[node name="RoundedRectShadow1" type="ColorRect" parent="MarginContainer/GridContainer/RoundedRect1"]
+show_behind_parent = true
+material = SubResource( 7 )
+margin_right = 226.0
+margin_bottom = 228.0
+color = Color( 0, 0, 0, 0.74902 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+corner_radius = 16
+shadow_size = 2
+
+[node name="RoundedRect2" type="PanelContainer" parent="MarginContainer/GridContainer"]
+margin_left = 250.0
+margin_top = 276.0
+margin_right = 476.0
+margin_bottom = 504.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 6 )
+
+[node name="RoundedRectShadow2" type="ColorRect" parent="MarginContainer/GridContainer/RoundedRect2"]
+show_behind_parent = true
+material = SubResource( 8 )
+margin_right = 226.0
+margin_bottom = 228.0
+color = Color( 0, 0, 0, 0.74902 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+corner_radius = 16
+shadow_size = 5
+
+[node name="RoundedRect3" type="PanelContainer" parent="MarginContainer/GridContainer"]
+margin_left = 500.0
+margin_top = 276.0
+margin_right = 726.0
+margin_bottom = 504.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 6 )
+
+[node name="RoundedRectShadow3" type="ColorRect" parent="MarginContainer/GridContainer/RoundedRect3"]
+show_behind_parent = true
+material = SubResource( 9 )
+margin_right = 226.0
+margin_bottom = 228.0
+color = Color( 0, 0, 0, 0.74902 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+corner_radius = 16
+shadow_size = 8
+
+[node name="RoundedRect4" type="PanelContainer" parent="MarginContainer/GridContainer"]
+margin_left = 750.0
+margin_top = 276.0
+margin_right = 976.0
+margin_bottom = 504.0
+size_flags_horizontal = 3
+size_flags_vertical = 3
+custom_styles/panel = SubResource( 6 )
+
+[node name="RoundedRectShadow4" type="ColorRect" parent="MarginContainer/GridContainer/RoundedRect4"]
+show_behind_parent = true
+material = SubResource( 10 )
+margin_right = 226.0
+margin_bottom = 228.0
+color = Color( 0, 0, 0, 0.74902 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+corner_radius = 16
+shadow_size = 12
