@@ -11,28 +11,28 @@ shader = ExtResource( 1 )
 shader_param/rect_position = Vector2( 0, 0 )
 shader_param/rect_end = Vector2( 226, 228 )
 shader_param/rect_corner_radius = 0
-shader_param/shadow_size = 2.0
+shader_param/shadow_size = 2
 
 [sub_resource type="ShaderMaterial" id=3]
 shader = ExtResource( 1 )
 shader_param/rect_position = Vector2( 0, 0 )
 shader_param/rect_end = Vector2( 226, 228 )
 shader_param/rect_corner_radius = 0
-shader_param/shadow_size = 5.0
+shader_param/shadow_size = 5
 
 [sub_resource type="ShaderMaterial" id=4]
 shader = ExtResource( 1 )
 shader_param/rect_position = Vector2( 0, 0 )
 shader_param/rect_end = Vector2( 226, 228 )
 shader_param/rect_corner_radius = 0
-shader_param/shadow_size = 8.0
+shader_param/shadow_size = 8
 
 [sub_resource type="ShaderMaterial" id=5]
 shader = ExtResource( 1 )
 shader_param/rect_position = Vector2( 0, 0 )
 shader_param/rect_end = Vector2( 226, 228 )
 shader_param/rect_corner_radius = 0
-shader_param/shadow_size = 12.0
+shader_param/shadow_size = 12
 
 [sub_resource type="StyleBoxFlat" id=6]
 bg_color = Color( 0.980392, 0.980392, 0.980392, 1 )
@@ -46,28 +46,28 @@ shader = ExtResource( 1 )
 shader_param/rect_position = Vector2( 0, 0 )
 shader_param/rect_end = Vector2( 226, 228 )
 shader_param/rect_corner_radius = 16
-shader_param/shadow_size = 2.0
+shader_param/shadow_size = 2
 
 [sub_resource type="ShaderMaterial" id=8]
 shader = ExtResource( 1 )
 shader_param/rect_position = Vector2( 0, 0 )
 shader_param/rect_end = Vector2( 226, 228 )
 shader_param/rect_corner_radius = 16
-shader_param/shadow_size = 7.0
+shader_param/shadow_size = 5
 
 [sub_resource type="ShaderMaterial" id=9]
 shader = ExtResource( 1 )
 shader_param/rect_position = Vector2( 0, 0 )
 shader_param/rect_end = Vector2( 226, 228 )
 shader_param/rect_corner_radius = 16
-shader_param/shadow_size = 10.0
+shader_param/shadow_size = 8
 
 [sub_resource type="ShaderMaterial" id=10]
 shader = ExtResource( 1 )
 shader_param/rect_position = Vector2( 0, 0 )
 shader_param/rect_end = Vector2( 226, 228 )
 shader_param/rect_corner_radius = 16
-shader_param/shadow_size = 20.0
+shader_param/shadow_size = 12
 
 [node name="Background" type="ColorRect"]
 anchor_right = 1.0
@@ -117,7 +117,6 @@ script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
-shadow_size = 2
 
 [node name="Rect2" type="PanelContainer" parent="MarginContainer/GridContainer"]
 margin_left = 250.0
@@ -198,7 +197,6 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 corner_radius = 16
-shadow_size = 2
 
 [node name="RoundedRect2" type="PanelContainer" parent="MarginContainer/GridContainer"]
 margin_left = 250.0
